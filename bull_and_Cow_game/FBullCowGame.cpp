@@ -24,7 +24,7 @@ bool FBullCowGame::IsGameWon() const
 }
 
 
-EGuessStatus FBullCowGame::CheckGuessValidity(FString) const
+EGuessStatus FBullCowGame::CheckGuessValidity(FString Guess) const
 {
 	if (false) //TODO Put in statement for invalid input
 	{
@@ -35,10 +35,15 @@ EGuessStatus FBullCowGame::CheckGuessValidity(FString) const
 	{
 		return EGuessStatus::Not_Lowercase;
 	}
-	else if (false)
+	else if (Guess.length != GetHiddenWordLength())
 	{
 		return EGuessStatus::Wrong_Lenght;
 	}
+	else
+	{
+		return EGuessStatus::Ok;
+	}
+
 	// if the guess isn't an isogram return error
 	//if the guess isn't all lower case return error
 	return EGuessStatus::Ok; //TODO Make actual error

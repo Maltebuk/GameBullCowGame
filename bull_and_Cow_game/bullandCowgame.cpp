@@ -62,6 +62,7 @@ void PlayGame()
 	for (int32 count = 1; count <= MaxTries; count++)//TODO CHange from a for to a while once we can validate tries 
 	{
 		FText Guess = GetGuess();
+
 		// Print out the guess
 
 		EGuessStatus Status = BCGame.CheckGuessValidity(Guess);
